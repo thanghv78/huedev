@@ -174,7 +174,7 @@ class MainWP_Child_Pagespeed {
 	 * Schedule daily Page Speed checks.
 	 */
 	public function init_cron() {
-		add_action( 'mainwp_child_pagespeed_cron_check', array( __CLASS__ , 'pagespeed_cron_check' ) );
+		add_action( 'mainwp_child_pagespeed_cron_check', array( __CLASS__, 'pagespeed_cron_check' ) );
 		$sched = wp_next_scheduled( 'mainwp_child_pagespeed_cron_check' );
 		if ( false === $sched ) {
 			wp_schedule_event( time(), 'daily', 'mainwp_child_pagespeed_cron_check' );
